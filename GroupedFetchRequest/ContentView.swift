@@ -12,12 +12,12 @@ struct ContentView: View {
     @Environment(\.managedObjectContext) private var viewContext
     
     @SectionedFetchRequest<String, Item>(
-        sectionIdentifier: \.categoryText,
-        sortDescriptors: [SortDescriptor(\.category, order: .reverse)]
+        sectionIdentifier: \.dateText,
+        sortDescriptors: [SortDescriptor(\.date, order: .reverse)]
     )
     private var itemSections: SectionedFetchResults<String, Item>
     
-    @State private var userEnteredCategory: Int16 = 0
+    @State private var userSelectedDate: Date = Date()
     @State private var userEnteredContent: String = ""
 
     var body: some View {
@@ -27,17 +27,12 @@ struct ContentView: View {
             Form {
                 
                 Section("Add new item") {
-                    Picker("Category", selection: $userEnteredCategory) {
-                        ForEach(CelestialBodyType.allCases, id: \.self.rawValue) { typeCase in
-                            Text(typeCase.getDisplayName())
-                                .id(typeCase.rawValue)
-                        }
-                    }
+                    DatePicker("Date", selection: $userSelectedDate, displayedComponents: [.date])
                     TextField("Name", text: $userEnteredContent)
                     Button("Create") {
                         let newRecord = Item(context: viewContext)
                         newRecord.content = self.userEnteredContent
-                        newRecord.category = self.userEnteredCategory
+                        newRecord.date = self.userSelectedDate
                         try? viewContext.save()
                     }
                 }
@@ -48,7 +43,7 @@ struct ContentView: View {
                             VStack(alignment: .leading) {
                                 Text(itemEntry.content ?? "")
                                     .font(.headline)
-                                Text(itemEntry.categoryText)
+                                Text(itemEntry.dateText)
                             }
                         }
                     }
@@ -64,10 +59,10 @@ struct ContentView: View {
 
 extension Item {
     @objc
-    var categoryText: String {
-        guard let typeObj = CelestialBodyType(rawValue: self.category) else {
+    var dateText: String {
+        guard let date = self.date else {
             return "Unknown"
         }
-        return typeObj.getDisplayName()
+        return DateFormatter.localizedString(from: date, dateStyle: .short, timeStyle: .none)
     }
 }

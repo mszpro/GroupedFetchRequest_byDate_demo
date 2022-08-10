@@ -13,7 +13,6 @@
 		2A95635028A24BA500A951D3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A95634F28A24BA500A951D3 /* Preview Assets.xcassets */; };
 		2A95635228A24BA500A951D3 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A95635128A24BA500A951D3 /* Persistence.swift */; };
 		2A95635528A24BA500A951D3 /* GroupedFetchRequest.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2A95635328A24BA500A951D3 /* GroupedFetchRequest.xcdatamodeld */; };
-		2A95635C28A2525200A951D3 /* CelestialBodyType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A95635B28A2525200A951D3 /* CelestialBodyType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,7 +23,6 @@
 		2A95634F28A24BA500A951D3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2A95635128A24BA500A951D3 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		2A95635428A24BA500A951D3 /* GroupedFetchRequest.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GroupedFetchRequest.xcdatamodel; sourceTree = "<group>"; };
-		2A95635B28A2525200A951D3 /* CelestialBodyType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CelestialBodyType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +56,6 @@
 			isa = PBXGroup;
 			children = (
 				2A95634828A24BA400A951D3 /* GroupedFetchRequestApp.swift */,
-				2A95635B28A2525200A951D3 /* CelestialBodyType.swift */,
 				2A95634A28A24BA400A951D3 /* ContentView.swift */,
 				2A95634C28A24BA500A951D3 /* Assets.xcassets */,
 				2A95635128A24BA500A951D3 /* Persistence.swift */,
@@ -147,7 +144,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				2A95635228A24BA500A951D3 /* Persistence.swift in Sources */,
-				2A95635C28A2525200A951D3 /* CelestialBodyType.swift in Sources */,
 				2A95634B28A24BA400A951D3 /* ContentView.swift in Sources */,
 				2A95635528A24BA500A951D3 /* GroupedFetchRequest.xcdatamodeld in Sources */,
 				2A95634928A24BA400A951D3 /* GroupedFetchRequestApp.swift in Sources */,
